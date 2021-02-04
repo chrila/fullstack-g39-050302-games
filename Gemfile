@@ -56,3 +56,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # for dynamically adding game parts
 gem 'cocoon'
+# for managing environment variables
+gem 'dotenv-rails', groups: [:development, :test]
+# for amazon s3 access
+gem 'aws-sdk-s3'
