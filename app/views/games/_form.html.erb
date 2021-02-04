@@ -56,6 +56,17 @@
     <%= form.file_field :photo_box %>
   </div>
 
+  <h2>Parts</h2>
+  <div id="parts">
+    <%= form.fields_for :parts do |part_form| %>
+      <%= render 'part_fields', f: part_form %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'add part', form, :parts %>
+    </div>
+  </div>
+
+  <br />
   <div class="actions">
     <%= form.submit %>
   </div>

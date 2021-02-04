@@ -8,6 +8,8 @@ class Game < ApplicationRecord
   has_one_attached :rules_file
   has_one_attached :photo_box
 
+  accepts_nested_attributes_for :parts, allow_destroy: true
+
   private
 
   def check_age
