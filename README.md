@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+La tarea del dasafío 2 del módulo 05 "desarollo rails y javascript", capítulo 03 "polimorfismo y subida de archivos". Es un sistema para manejar juegos de mesa.
 
-Things you may want to cover:
+## Game
+El modelo `Game` contiene los siguientes datos de un juego:
+* `players_from` ... la cantidad mńima de jugadores
+* `players_to` ... la cantidad máxima de jugadores
+* `age_from` ... edad mínima
+* `age_to` ... edad máxima
+* `rules` ... las reglas en brevedad
+* `rules_file` ... un archivo con las reglas
+* `photo_box` ... una foto de la caja
+* `parts` ... las piezas del juego (modelo aparte)
 
-* Ruby version
+## Part
+El modelo `Part` es una pieza del juego. Tiene los siguientes atributos:
+* `description` ... una descripción de la pieza
+* `photo` ... una foto de la pieza
 
-* System dependencies
+## Storage
+Los archivos se almacena en Amazon AWS S3.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Heroku
+La aplicación está disponible en Heroku: https://g39-chris-boardgames.herokuapp.com/
