@@ -5,6 +5,9 @@ class Game < ApplicationRecord
   before_validation :check_age
   before_validation :check_players
 
+  has_one_attached :rules_file
+  has_one_attached :photo_box
+
   private
 
   def check_age

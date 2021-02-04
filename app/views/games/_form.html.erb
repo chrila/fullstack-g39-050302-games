@@ -37,13 +37,23 @@
   </div>
 
   <div class="field">
+    <%= form.label :manufacturer %>
+    <%= form.text_field :manufacturer %>
+  </div>
+
+  <div class="field">
     <%= form.label :rules %>
     <%= form.text_area :rules %>
   </div>
 
   <div class="field">
-    <%= form.label :manufacturer %>
-    <%= form.text_field :manufacturer %>
+    <%= form.label :rules_file %>
+    <%= form.file_field :rules_file %>
+  </div>
+
+  <div class="field">
+    <%= form.label :photo_box %>
+    <%= form.file_field :photo_box %>
   </div>
 
   <div class="actions">
