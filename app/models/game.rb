@@ -1,5 +1,5 @@
 class Game < ApplicationRecord
-  has_many :parts
+  has_many :parts, dependent: :destroy
 
   validates :name, presence: true
   before_validation :check_age
