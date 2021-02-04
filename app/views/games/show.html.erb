@@ -26,14 +26,47 @@
 </p>
 
 <p>
+  <strong>Manufacturer:</strong>
+  <%= @game.manufacturer %>
+</p>
+
+<p>
   <strong>Rules:</strong>
   <%= @game.rules %>
 </p>
 
-<p>
-  <strong>Manufacturer:</strong>
-  <%= @game.manufacturer %>
-</p>
+<h2>Files</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Preview</th>
+      <th colspan="3"></th>
+    </tr>
+  <thead>
+  <tbody>
+    <tr>
+      <td>Rules</td>
+      <td><%= image_tag @game.rules_file.representation(resize_to_limit: [100, 100]) %></td>
+      <td><%= link_to 'Download', rails_blob_url(@game.rules_file, disposition: "attachment") %> </td>
+    </tr>
+    <tr>
+      <td>Box</td>
+      <td><%= image_tag @game.photo_box.variant(resize: '100x100', colorspace: 'gray') %>
+      <td><%= link_to 'Download', rails_blob_url(@game.photo_box, disposition: "attachment") %> </td>
+    </tr>
+    <tr>
+      <th>Parts</th>
+    </tr>
+    <% @game.parts.each do |p| %>
+      <tr>
+        <td><%= p.description %></td>
+        <td><%= image_tag p.photo.variant(resize: '100x100', colorspace: 'gray') %>
+        <td><%= link_to 'Download', rails_blob_url(p.photo, disposition: "attachment") %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>
